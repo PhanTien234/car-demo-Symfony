@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Get All Customers{% endblock %}
+
+{% block body %}
+    <table>
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Customer Name</th>
+            <th>Birthdate</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for customer in customers %}
+            <tr>
+                <td>{{ customer.id }}</td>
+                <td>{{ customer.name }}</td>
+                <td>{{ customer.birthDate|date('F j,Y, g:i a') }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
